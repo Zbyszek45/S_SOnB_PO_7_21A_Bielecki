@@ -5,6 +5,7 @@ namespace SharedMemoryApp
 {
     public partial class Form1 : Form
     {
+        MemoryMappedFile mmf = MemoryMappedFile.CreateOrOpen("shared", 10000);
         public Form1()
         {
             InitializeComponent();
@@ -27,14 +28,12 @@ namespace SharedMemoryApp
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            byte[] bytes = StringToBytes(textBoxControler.Text);
-            using (MemoryMappedFile mmf = MemoryMappedFile.CreateOrOpen("shared", 10000))
-            {
-                MemoryMappedViewAccessor mmva = mmf.CreateViewAccessor();
-                mmva.Write(0, bytes.Length);
-                mmva.WriteArray<byte>(0, bytes, 0, bytes.Length);
-                mmva.Flush();
-            }
+            //byte[] bytes = StringToBytes(textBoxControler.Text);
+            byte[] buffer = Encoding.UTF8.GetBytes(textBoxControler.Text);
+            MemoryMappedViewAccessor mmva = mmf.CreateViewAccessor();
+            mmva.Write(0, buffer.Length);
+            mmva.WriteArray<byte>(4, buffer, 0, buffer.Length);
+            mmva.Flush();
         }
 
         private byte[] StringToBytes(String s)
@@ -77,15 +76,12 @@ namespace SharedMemoryApp
 
         private void buttonStartRead_Click(object sender, EventArgs e)
         {
-            using (MemoryMappedFile mmf = MemoryMappedFile.CreateOrOpen("shared", 10000))
-            {
-                MemoryMappedViewAccessor mmva = mmf.CreateViewAccessor();
-                byte[] buffer = new byte[mmva.ReadInt32(0)];
-                mmva.ReadArray<byte>(buffer.Length, buffer, 0, buffer.Length);
-                Console.WriteLine("buffer: {0}", BitConverter.ToString(buffer));
-                int res = BitConverter.ToInt32(buffer, 0);
-                labelReadValue.Text = res.ToString();
-            }
+            MemoryMappedViewAccessor mmva = mmf.CreateViewAccessor();
+            byte[] buffer = new byte[mmva.ReadInt32(0)];
+            mmva.ReadArray<byte>(4, buffer, 0, buffer.Length);
+            String s = Encoding.UTF8.GetString(buffer);
+            Console.WriteLine("buffer: {0}", s);
+            labelReadValue.Text = s;
         }
     }
 }
