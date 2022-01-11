@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Pink\\Desktop\\sonb_proj\\SharedMemorySol\\SharedMemoryApp\\SharedMemoryApp.csproj": {}
+    "C:\\PS\\GaleriaZdjec\\S_SOnB_PO_7_21A_Bielecki\\SharedMemorySol\\SharedMemoryApp\\SharedMemoryApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Pink\\Desktop\\sonb_proj\\SharedMemorySol\\SharedMemoryApp\\SharedMemoryApp.csproj": {
+    "C:\\PS\\GaleriaZdjec\\S_SOnB_PO_7_21A_Bielecki\\SharedMemorySol\\SharedMemoryApp\\SharedMemoryApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Pink\\Desktop\\sonb_proj\\SharedMemorySol\\SharedMemoryApp\\SharedMemoryApp.csproj",
+        "projectUniqueName": "C:\\PS\\GaleriaZdjec\\S_SOnB_PO_7_21A_Bielecki\\SharedMemorySol\\SharedMemoryApp\\SharedMemoryApp.csproj",
         "projectName": "SharedMemoryApp",
-        "projectPath": "C:\\Users\\Pink\\Desktop\\sonb_proj\\SharedMemorySol\\SharedMemoryApp\\SharedMemoryApp.csproj",
-        "packagesPath": "C:\\Users\\Pink\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Pink\\Desktop\\sonb_proj\\SharedMemorySol\\SharedMemoryApp\\obj\\",
+        "projectPath": "C:\\PS\\GaleriaZdjec\\S_SOnB_PO_7_21A_Bielecki\\SharedMemorySol\\SharedMemoryApp\\SharedMemoryApp.csproj",
+        "packagesPath": "C:\\Users\\Bartek\\.nuget\\packages\\",
+        "outputPath": "C:\\PS\\GaleriaZdjec\\S_SOnB_PO_7_21A_Bielecki\\SharedMemorySol\\SharedMemoryApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Pink\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Bartek\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -49,15 +49,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            },
-            "Microsoft.WindowsDesktop.App.WindowsForms": {
-              "privateAssets": "none"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
         }
       }
     }
